@@ -1,30 +1,34 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../../logo.svg';
+import IGLogo from '../../assets/iglogo.png';
 
 import { Button, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 import './SearchBar.css';
 
-
-
-const SearchBar =  (props) => (
-    <>
-        <div className='sbContainer'>
-            <div className="logo">
-                <img src={require("./assets/instagram-logo-black-transparent.png")}/>
-                <h3> INSTAGRAM </h3>
-            </div>
-
-            <Input placeholder="username" id="search" />
-
-            <div className="icons">
-                icons
-            </div>
-            
+const SearchBar = () => {
+    return (
+      <div className="search-bar-wrapper">
+        <div className="image-wrapper">
+          <img alt="instagram logo" src={IGLogo} className="logo-image" />
         </div>
-    </>
-)
+        <div>
+          <input type="text" placeholder="Search" />
+        </div>
+        <div className="social-wrapper">
+          <div className="social">
+            <i className="fa fa-compass" />
+          </div>
+          <div className="social">
+            <i className="fa fa-heart" />
+          </div>
+          <div className="social">
+            <i className="fa fa-user-circle" />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
  
 export default SearchBar;

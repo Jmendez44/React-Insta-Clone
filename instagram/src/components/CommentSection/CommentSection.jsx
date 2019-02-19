@@ -1,14 +1,32 @@
-import React, { Fragment } from 'react';
+
+
+
+import React from 'react';
 import PropTypes from 'prop-types';
+import Comment from './Comment';
+import CommentInput from './CommentInput';
 
-
-function CommentSection (props) {
+class CommentSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: props.comments
+    };
+  }
+  render() {
     return (
-        <>
-           <p> yoooo </p>
-        </>
-    )
+      <div>
+        {this.state.comments.map((c, i) => <Comment key={i} comment={c} />)}
+        <CommentInput />
+      </div>
+    );
+  }
 }
- 
-export default CommentSection;
 
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({ text: PropTypes.string, username: PropTypes.string })
+  )
+};
+
+export default CommentSection;

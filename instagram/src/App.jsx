@@ -7,25 +7,25 @@ import './App.css';
 
 import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
-import CommentSection from './components/CommentSection/CommentSection';
+import PostsContainer from './components/PostContainer/PostContainer';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
-    }
+      posts: dummyData
+    };
   }
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <SearchBar />
-        <PostContainer />
-        <CommentSection />
+        <PostsContainer posts={this.state.posts} />
       </div>
-    )
+    );
   }
 }
+
 
 export default App;

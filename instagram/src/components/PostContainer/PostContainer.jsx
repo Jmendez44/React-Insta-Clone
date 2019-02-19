@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import Post from './Post';
+import './Posts.css';
 
-function PostContainer (props) {
+const PostsContainer = props => {
     return (
-        <>
-           <p> yoooo </p>
-        </>
-    )
-}
+      <div className="posts-container-wrapper">
+        {props.posts.map(p => <Post key={p.imageUrl} post={p} />)}
+      </div>
+    );
+  };
+  
  
-export default PostContainer;
+export default PostsContainer;
 
