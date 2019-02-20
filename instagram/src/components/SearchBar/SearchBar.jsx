@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import IGLogo from '../../assets/iglogo.png';
 
-import { Button, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+// import { Button, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 import './SearchBar.css';
 
